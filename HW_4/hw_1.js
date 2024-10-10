@@ -5,6 +5,11 @@ class Calculator {
     }
     this.x = x;
     this.y = y;
+
+    this.logSum = this.logSum.bind(this);
+    this.logMul = this.logMul.bind(this);
+    this.logSub = this.logSub.bind(this);
+    this.logDiv = this.logDiv.bind(this);
   }
 
   #isValidNumber(num) {
@@ -55,6 +60,3 @@ console.log(calculator.logDiv());
 calculator.setX(20);
 calculator.setY(4);
 console.log(calculator.logSum());
-
-const logSumRef = calculator.logSum.bind(calculator);
-console.log(logSumRef());
