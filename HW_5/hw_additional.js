@@ -17,6 +17,7 @@ class Stack {
     if (this.size >= this.maxSize) {
       throw new Error("Stack is full.");
     }
+
     this.storage[this.size] = elem;
     this.size++;
   }
@@ -25,8 +26,11 @@ class Stack {
     if (this.isEmpty()) {
       throw new Error("The stack is empty.");
     }
+
     this.size--;
+
     const value = this.storage[this.size];
+
     delete this.storage[this.size];
     return value;
   }
@@ -41,9 +45,11 @@ class Stack {
 
   toArray() {
     const result = [];
+
     for (let i = 0; i < this.size; i++) {
       result.push(this.storage[i]);
     }
+
     return result;
   }
 
@@ -53,9 +59,11 @@ class Stack {
     }
 
     const stack = new Stack(iterable.length);
+
     for (const item of iterable) {
       stack.push(item);
     }
+    
     return stack;
   }
 }
